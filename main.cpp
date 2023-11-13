@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    std::string inputFileName = ""; 
+    std::string inputFileName = "test.txt"; 
     std::vector<std::string> sentences;
     sentenceSplitter(inputFileName, sentences);
 
@@ -12,7 +12,7 @@ int main() {
     std::multimap<int, std::pair<std::string, std::string>> freqWordpair_mmap;
     freqWordpairMmap(wordpairFreq_map, freqWordpair_mmap);
 
-    std::string outputFileName = ""; 
+    std::string outputFileName = "test.txt"; 
     int topCount = 10; 
     int botCount = 10; 
     printWordpairs(freqWordpair_mmap, outputFileName, topCount, botCount);
