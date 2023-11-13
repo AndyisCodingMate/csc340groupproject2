@@ -69,22 +69,22 @@ void freqWordpairMmap(std::map<std::pair<std::string, std::string>, int> &wordpa
 }
 
 void printWordpairs(std::multimap<int, std::pair<std::string, std::string>> &freqWordpair_multimap, std::string outFname, int topCnt, int botCnt) {
-   ofstream myFile;
+   std::ofstream myFile;
    myFile.open(outFname);
    //print top X frequency
-    myFile<<"Top 10 most frequent word pairs: "<<endl;
+    myFile<<"Top 10 most frequent word pairs: "<<std::endl;
    int topCount = 0;
    for (auto it = freqWordpair_multimap.rbegin(); it != freqWordpair_multimap.rend() && topCount>0; it++, topCount++){
-       myFile << "<" << it->second.first << "," << it->second.second << ">" <<": "<< it->first << endl;
+       myFile << "<" << it->second.first << "," << it->second.second << ">" <<": "<< it->first << std::endl;
    }
 
-   myFile<<endl;
+   myFile<<std::endl;
 
     //print lowest X frequency
-    myFile<<"Bottom 10 least frequent word pairs: "<<endl;
+    myFile<<"Bottom 10 least frequent word pairs: "<<std::endl;
    int bottomCount = 0;
     for (auto it = freqWordpair_multimap.begin(); it != freqWordpair_multimap.end() && bottomCount<botCnt; it++, bottomCount++){
-         myFile << "<" << it->second.first << "," << it->second.second << ">" <<": "<< it->first << endl;
+         myFile << "<" << it->second.first << "," << it->second.second << ">" <<": "<< it->first << std::endl;
     }
    
    

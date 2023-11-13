@@ -18,7 +18,7 @@
     Repeat the code until the string is empty.      
 
 2. Describe your algorithm for the wordpairMapping( ) function in pseudocode.
-
+    
  
 
 */

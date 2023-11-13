@@ -6,11 +6,10 @@
 #include <map>
 #include <set>
 
-using namespace std;
 
-void sentenceSplitter( string& fname, vector<string>& sentences);
-void wordpairMapping( vector<string>& sentences, map< pair<string,string>, int> &wordpairFreq_map);
-void freqWordpairMmap(map< pair<string,string>, int> &wordpairFreq_map, multimap<int, pair<string, string> > &freqWordpair_mmap );
-void printWordpairs(multimap<int, pair<string, string> > &freqWordpair_multimap, string outFname, int topCnt, int botCnt);
+void sentenceSplitter(std::string& fname, std::vector<std::string>& sentences);
+void wordpairMapping( std::vector<std::string>& sentences, std::map< std::pair<std::string,std::string>, int> &wordpairFreq_map);
+void freqWordpairMmap(std::map< std::pair<std::string,std::string>, int> &wordpairFreq_map, std::multimap<int, std::pair<std::string, std::string> > &freqWordpair_mmap );
+void printWordpairs(std::multimap<int, std::pair<std::string, std::string> > &freqWordpair_multimap, std::string outFname, int topCnt, int botCnt);
 
 #endif    
