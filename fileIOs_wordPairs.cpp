@@ -13,18 +13,17 @@ void sentenceSplitter(const std::string &fname, std::vector<std::string> &senten
     }
     while (std::getline(myFile, line)) {
         // Skip empty lines
-        if (line.empty()) {
-            continue;
+        while(!line.empty()){
+            size_t targetPos = std::min({line.find('.'), line.find('?'), line.find('!'), line.find(':')});
+            // Handle cases where a sentence ends with a quotation mark
+            if (line[targetPos] == '"') {
+                targetPos++;
+            }
+            temp = line.substr(0, targetPos);
+            sentences.push_back(temp);
+            // Skip remaining spaces and characters after the end of the sentence
+            line.erase(0, targetPos + 1);
         }
-        size_t targetPos = std::min({line.find('.'), line.find('?'), line.find('!'), line.find(':')});
-        // Handle cases where a sentence ends with a quotation mark
-        if (line[targetPos] == '"') {
-            targetPos++;
-        }
-        temp = line.substr(0, targetPos);
-        sentences.push_back(temp);
-        // Skip remaining spaces and characters after the end of the sentence
-        line.erase(0, targetPos + 1);
     }
     myFile.close();
 }
