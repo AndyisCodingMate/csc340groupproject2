@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <set>
+
 using namespace std;
 
 void sentenceSplitter( string& fname, vector<string>& sentences);
